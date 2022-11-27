@@ -91,3 +91,13 @@ var sum = 0;
 var average = 0;
 var CurrentMonth = 0;
 var PreviousMonth = 0;
+
+for (var i = 0; i < NumberOfMonths; i++) {
+    var currentMonthAndSale = finances[i]; // finances[1] => ["Feb-2010", 984655]
+    var currentMonth = currentMonthAndSale[1];
+    sum = sum + currentMonth;
+  }
+  console.log ("Finance analysis");
+  console.log ("---------------------------");
+  console.log ("Total months: ", + NumberOfMonths);
+  console.log ("Total: $", + sum);
