@@ -125,6 +125,5 @@ for (var i = 0; i < NumberOfMonths; i++) {
   console.log ("Total months: ", + NumberOfMonths);
   console.log ("Total: $", + sum);
   console.log ("Change in profit", + average);
-  console.log ("Greatest increase", + finances[GreatestIndexNumber][0], + finances[GreatestIndexNumber][1]);
-  console.log ("Lowest increase", + finances[LowestIndexNumber][0], + finances[LowestIndexNumber][1]);
-  
+  console.log ("Greatest increase", finances[GreatestIndexNumber][0], finances[GreatestIndexNumber][1]);
+  console.log ("Lowest increase", finances[LowestIndexNumber][0], finances[LowestIndexNumber][1]);
