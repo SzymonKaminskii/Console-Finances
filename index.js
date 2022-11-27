@@ -91,13 +91,25 @@ var sum = 0;
 var average = 0;
 var CurrentMonth = 0;
 var PreviousMonth = 0;
+var currentSale = 0;
+var previousSale = 0;
+var  changeInProfit = 0;
 
 for (var i = 0; i < NumberOfMonths; i++) {
     var currentMonthAndSale = finances[i]; // finances[1] => ["Feb-2010", 984655]
     var currentMonth = currentMonthAndSale[1];
     sum = sum + currentMonth;
   }
+  for (var i=0; i < NumberOfMonths; i++) {
+    currentSale = finances [i][1];
+    changeInProfit =  currentSale - previousSale;
+    average += changeInProfit;
+    previousSale = currentSale;
+  }
+  average = (average / NumberOfMonths).toFixed(2);
   console.log ("Finance analysis");
   console.log ("---------------------------");
   console.log ("Total months: ", + NumberOfMonths);
   console.log ("Total: $", + sum);
+  console.log ("Change in profit", + average);
+  
