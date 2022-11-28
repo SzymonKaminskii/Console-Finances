@@ -93,26 +93,29 @@ var CurrentMonth = 0;
 var PreviousMonth = 0;
 var currentSale = 0;
 var previousSale = 0;
-var  changeInProfit = 0;
+var changeInProfit = 0;
 var greatestIncrease = 0;
 var lowestIncrease = 0;
 var GreatestIndexNumber;
 var LowestIndexNumber;
-
+// Loop for total number of Months
 for (var i = 0; i < NumberOfMonths; i++) {
-    var currentMonthAndSale = finances[i]; // finances[1] => ["Feb-2010", 984655]
+    var currentMonthAndSale = finances[i]; 
     var currentMonth = currentMonthAndSale[1];
     sum = sum + currentMonth;
   }
+// Loop for average change in profit
   for (var i=0; i < NumberOfMonths; i++) {
     currentSale = finances [i][1];
     changeInProfit =  currentSale - previousSale;
     average += changeInProfit;
     previousSale = currentSale;
+    // Conditional to calculate The greatest increase in profits (date and amount) over the entire period.
     if (changeInProfit>greatestIncrease) {
         greatestIncrease = currentSale;
         GreatestIndexNumber = i ;
     } 
+     // Conditional to calculate The greatest decrease in profits (date and amount) over the entire period.
     if (changeInProfit<lowestIncrease) {
         lowestIncrease = currentSale;
         LowestIndexNumber = i ;
@@ -124,6 +127,6 @@ for (var i = 0; i < NumberOfMonths; i++) {
   console.log ("---------------------------");
   console.log ("Total months: ", + NumberOfMonths);
   console.log ("Total: $", + sum);
-  console.log ("Change in profit", + average);
-  console.log ("Greatest increase", finances[GreatestIndexNumber][0], finances[GreatestIndexNumber][1]);
-  console.log ("Lowest increase", finances[LowestIndexNumber][0], finances[LowestIndexNumber][1]);
+  console.log ("Average change in profit $", + average);
+  console.log ("Greatest increase", finances[GreatestIndexNumber][0], "$",finances[GreatestIndexNumber][1]);
+  console.log ("Greatest decrease", finances[LowestIndexNumber][0], "$",finances[LowestIndexNumber][1]);
